@@ -241,7 +241,10 @@ body {
 .leaflet-tooltip-right:before {
   border-right-color: #000;
 }
+
+
 </style>
+
 <link rel="stylesheet" href="loading.css">
 <link rel="stylesheet" href="tab-panel.css">
 <script src="libs/jquery/jquery-3.1.0.min.js"></script>
@@ -275,13 +278,16 @@ body {
 </div>
 <div class="panel-table-container"><table class="panel-table" id="tbl_save"></table></div>
 </div>
-<!-- <script>
+
+
+
+<script>
   function jcE(r){for(var c,t=1,a=r.charAt(0),h="";""!==a;)c=r.charAt(t++),""!==c&&(h+=c),h+=a,a=r.charAt(t++);return h}
   function __initGoogleAPI(){
     App.moduleLoaded('GoogleAPI');
   }
   App
-    .moduleLoad(App.remoteProtocol + 'maps.googleapis.com/maps/api/js?key=' + jcE('AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo') + '&callback=__initGoogleAPI&language=uk&libraries=places')
+    .moduleLoad(App.remoteProtocol + 'maps.googleapis.com/maps/api/js?key=' + ('AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo') + '&callback=__initGoogleAPI&language=uk&libraries=places')
     .moduleLoad('YandexAPI', App.remoteProtocol + 'api-maps.yandex.ru/2.0/?load=package.map&lang=ru-RU')
     .moduleLoad('jQuery-Storage', 'libs/jquery/plugins/jquery.storageapi.min.js')
     .moduleLoad('jQuery-Noty', 'libs/jquery/plugins/jquery.noty.packaged.min.js')
@@ -297,9 +303,9 @@ body {
     .moduleLoad('Leaflet-Yandex', 'libs/leaflet/plugins/layer/tile/Yandex.js', ['Leaflet-Core', 'YandexAPI'])
     .moduleLoad('Leaflet-Google', 'libs/leaflet/plugins/layer/tile/Google.js', ['Leaflet-Core', 'GoogleAPI'])
     .moduleEvent(['Leaflet-Core', 'Leaflet-Bouncing', 'Leaflet-Yandex', 'TabPanel', 'Leaflet-TooltipCustom'], function(){
-      L.Icon.Default.imagePath = 'libs/leaflet/images';
-      App.moduleLoaded('Leaflet');
-    })
+       L.Icon.Default.imagePath = 'libs/leaflet/images';
+       App.moduleLoaded('Leaflet');
+     })
     .moduleLoad('Core', 'Core.js', ['Collection', 'Saves', 'Region', 'BS', 'Address', 'jQuery', 'Leaflet'])
     .moduleLoad('Address', 'Address.js', 'MapObject')
     .moduleLoad('BS', 'BS.js', 'MapObject')
@@ -307,6 +313,6 @@ body {
     .moduleLoad('Saves', 'Saves.js', 'MapObject')
     .moduleLoad('MapObject', 'MapObject.js')
     .moduleLoad('Collection', 'Collection.js');
-</script> -->
+</script>
 </body>
 </html>

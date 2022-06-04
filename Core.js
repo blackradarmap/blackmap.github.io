@@ -515,7 +515,7 @@ App.extend(App.Core, {
           signalStrength: -65
         }]
       }),
-      url: "https://www.googleapis.com/geolocation/v1/geolocate?key="+jcE("AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo"),
+      url: "https://www.googleapis.com/geolocation/v1/geolocate?key="+("AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo"),
       type: "POST",
       contentType: "application/json; charset=utf-8",
       dataType: 'json',
@@ -580,34 +580,38 @@ App.extend(App.Core, {
         onComplete.call(this);
       }
     }); */
-    $.ajax({
-      data: 'cellid=' + cid + "&lac=" + lac + "&countrycode=" + mcc + "&operatorid=" + mnc,
-      url: "https://crossorigin.me/http://mobile.maps.yandex.net/cellid_location",
-      type: "GET",
-      context: this,
-      dataType: 'xml',
-      cache: false,
-      success: function(response, status){
-        var coord = $(response).find('location[source="FoundByCellid"]:eq(0) coordinates');
-        if (status !== 'success') {
-          onError.call(this, "Yandex", null, null, null, 'Статус запроса: "' + status + '"');
-          console.log(response);console.log(status);
-        } else if (!coord.length || !coord.attr('latitude') || !coord.attr('longitude')) {
-          onError.call(this, "Yandex", null, null, null, 'Не найдена информация про lat/lng в ответе');
-          console.log(response);console.log(status);
-        } else {
-          req.y = L.latLng([coord.attr('latitude'),coord.attr('longitude')]);
-        }
-      },
-      error: function(jqXHR, status, error){
-        onError.call(this, "Yandex", jqXHR, status, error);
-      },
-      complete: function(){
-        req.done_y = true;
-        onComplete.call(this);
-      }
-    });
 
+
+// УБРАЛ ЭТОТ КОД НАХРЕН
+
+    // $.ajax({
+    //   data: 'cellid=' + cid + "&lac=" + lac + "&countrycode=" + mcc + "&operatorid=" + mnc,
+    //   url: "https://crossorigin.me/http://mobile.maps.yandex.net/cellid_location",
+    //   type: "GET",
+    //   context: this,
+    //   dataType: 'xml',
+    //   cache: false,
+    //   success: function(response, status){
+    //     var coord = $(response).find('location[source="FoundByCellid"]:eq(0) coordinates');
+    //     if (status !== 'success') {
+    //       onError.call(this, "Yandex", null, null, null, 'Статус запроса: "' + status + '"');
+    //       console.log(response);console.log(status);
+    //     } else if (!coord.length || !coord.attr('latitude') || !coord.attr('longitude')) {
+    //       onError.call(this, "Yandex", null, null, null, 'Не найдена информация про lat/lng в ответе');
+    //       console.log(response);console.log(status);
+    //     } else {
+    //       req.y = L.latLng([coord.attr('latitude'),coord.attr('longitude')]);
+    //     }
+    //   },
+    //   error: function(jqXHR, status, error){
+    //     onError.call(this, "Yandex", jqXHR, status, error);
+    //   },
+    //   complete: function(){
+    //     req.done_y = true;
+    //     onComplete.call(this);
+    //   }
+    // });
+// УБРАЛ ЭТОТ КОД НАХРЕН
   }
 });
 

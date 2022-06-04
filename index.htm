@@ -281,7 +281,7 @@ body {
     App.moduleLoaded('GoogleAPI');
   }
   App
-    .moduleLoad(App.remoteProtocol + 'maps.googleapis.com/maps/api/js?key=' + jcE('AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo') + '&language=uk&libraries=places')
+    .moduleLoad(App.remoteProtocol + 'maps.googleapis.com/maps/api/js?key=' + jcE('AIzaSyAX78228ytIagSgaoZX_CwNTB3JvK0McRo') + '&callback=__initGoogleAPI&language=uk&libraries=places')
     .moduleLoad('YandexAPI', App.remoteProtocol + 'api-maps.yandex.ru/2.0/?load=package.map&lang=ru-RU')
     .moduleLoad('jQuery-Storage', 'libs/jquery/plugins/jquery.storageapi.min.js')
     .moduleLoad('jQuery-Noty', 'libs/jquery/plugins/jquery.noty.packaged.min.js')
